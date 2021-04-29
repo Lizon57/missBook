@@ -1,0 +1,25 @@
+.filter-container {
+  background-color: lightsalmon;
+  padding: 1rem;
+}
+
+.filter-inside-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.filter-container h2 {
+  text-align: center;
+  margin: 0;
+}
+
+.books-filter{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.books-filter label{
+    font-weight: 600;
+    margin-inline-end: .5rem;
+}
