@@ -15,7 +15,7 @@ export class BookFilter extends React.Component {
 
     handleChange = (ev) => {
         const field = ev.target.name
-        const value = ev.target.type === 'number' ? +ev.target.value : ev.target.value
+        const value = ev.target.type === 'number' ? +ev.target.value : ev.target.value.toLowerCase()
         this.setState({ filterBy: { ...this.state.filterBy, [field]: value } }, () => {
             this.props.onSetFilter(this.state.filterBy)
         })
@@ -28,7 +28,7 @@ export class BookFilter extends React.Component {
 
 
     render() {
-        const { title, authors, publishedDate, pageCount, categories, language, listPrice, isOnSale } = this.state.filterBy
+        const { title, language } = this.state.filterBy
 
         return (
             <section className="filter-container">
@@ -39,6 +39,11 @@ export class BookFilter extends React.Component {
                         <div>
                             <label htmlFor="byTitle">Title:</label>
                             <input type="text" id="byTitle" name="title" value={title} onChange={this.handleChange} />
+                        </div>
+
+                        <div>
+                            <label htmlFor="byAuthor">Language:</label>
+                            <input type="text" id="byAuthor" name="language" value={language} onChange={this.handleChange} />
                         </div>
                         <button>Filter</button>
                     </form>

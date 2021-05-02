@@ -1,0 +1,36 @@
+.nav-container {
+  justify-content: space-between;
+  padding: 0 2rem;
+}
+
+.nav-logo{
+  color: black;
+  font-size: 2rem;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.nav-logo::first-letter{
+  color: purple;
+}
+
+.nav-links-ul {
+  gap: 20px;
+}
+
+.nav-link {
+  color: black;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: color ease-in-out 0.5s;
+}
+
+.nav-link:hover {
+  color: purple;
+}
+
+[aria-current="page"]{
+  color: red;
+}

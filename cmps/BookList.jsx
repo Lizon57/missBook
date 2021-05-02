@@ -1,9 +1,9 @@
 import { BookPreview } from './BookPreview.jsx'
 
-export function BookList({ books, setSelectedBook }) {
+export function BookList({ books }) {
     return (
         <section className="books-lst-container">
-            {books.map(book => <BookPreview book={book} key={book.id} setSelectedBook={setSelectedBook} />)}
+            {books.map(book => <BookPreview book={book} key={book.id} />)}
         </section>
     )
 }

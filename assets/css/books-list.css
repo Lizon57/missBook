@@ -20,8 +20,9 @@
   background-color: #bbb;
 }
 
-.book-card-select-book {
-  cursor: pointer;
+.book-card a{
+  color: white;
+  text-decoration: none;
 }
 
 .book-card-title {
@@ -31,6 +32,7 @@
   font-weight: 700;
   letter-spacing: 1px;
   text-align: center;
+  text-transform: capitalize;
 }
 
 .book-card-thumbnail {

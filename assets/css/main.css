@@ -1,5 +1,9 @@
+@import url('./main-nav.css');
+@import url('./main-hero.css');
+@import url('./about-us.css');
 @import url('./books-list.css');
 @import url('./books-details.css');
+@import url('./books-reviews.css');
 @import url('./books-filter.css');
 
 * {
@@ -9,4 +13,22 @@
 body {
   background-color: #efefef;
   margin: 0;
+}
+
+/* HELPERS */
+.clean-list{
+  list-style-type: none;
+  margin: 0;
+}
+
+.flex{
+  display: flex;
+}
+
+.space-between{
+  justify-content: space-between;
+}
+
+.align-center{
+  align-items: center;
 }

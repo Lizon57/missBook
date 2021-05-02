@@ -1,0 +1,51 @@
+.book-reviews-container {
+  border: 1px solid black;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.book-reviews-container h1 {
+  margin: 0;
+  padding: 0.5rem;
+  background-color: lightsalmon;
+  text-transform: capitalize;
+}
+
+.book-reviews-container h1::first-letter {
+  text-transform: uppercase;
+}
+
+.review-info-container {
+  background-color: #222;
+  color: white;
+  padding: 0.5rem;
+}
+
+.review-text {
+  margin-block-end: 1rem;
+  padding: 0 1rem;
+}
+
+.review-text::first-letter {
+  color: purple;
+  text-transform: uppercase;
+}
+
+form {
+  border-top: 1px solid #222;
+}
+
+form > div {
+  padding: 5px 10px;
+}
+
+label {
+  font-weight: 600;
+  margin-inline-end: 0.5rem;
+}
+
+form textarea {
+  width: 100%;
+}

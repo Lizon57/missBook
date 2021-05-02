@@ -1,13 +1,12 @@
 import { bookService } from '../services/book-service.js'
 import { BookList } from '../cmps/BookList.jsx'
-import { BookDetails } from '../cmps/BookDetails.jsx'
+import { BookDetails } from './BookDetails.jsx'
 import { BookFilter } from '../cmps/BookFilter.jsx'
 
 export class BookApp extends React.Component {
     state = {
         books: null,
-        filterBy: null,
-        selectedBook: null
+        filterBy: null
     }
 
 
@@ -23,28 +22,20 @@ export class BookApp extends React.Component {
             })
     }
 
-    setSelectedBook = (book) => {
-        this.setState({ selectedBook: book })
-    }
-
     onSetFilter = (filterBy) => {
         this.setState({ filterBy }, this.loadBooks)
     }
 
 
     render() {
-        const { books, selectedBook } = this.state
+        const { books } = this.state
 
         if (!books) return <div>Loading...</div>
 
         return (
             <main>
-                {!selectedBook && <React.Fragment>
-                    <BookFilter onSetFilter={this.onSetFilter} />
-                    <BookList books={books} setSelectedBook={this.setSelectedBook} />
-                </React.Fragment>}
-
-                {selectedBook && <BookDetails book={selectedBook} goBack={() => this.setSelectedBook(null)} />}
+                <BookFilter onSetFilter={this.onSetFilter} />
+                <BookList books={books} />
             </main>
         )
     }

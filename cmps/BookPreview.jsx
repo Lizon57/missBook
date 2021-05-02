@@ -1,10 +1,14 @@
-export function BookPreview({ book, setSelectedBook }) {
+const { Link } = ReactRouterDOM
+
+export function BookPreview({ book }) {
     return (
         <article className="book-card">
-            <div className="book-card-select-book" onClick={() => setSelectedBook(book)}>
-                <div className="book-card-title">{book.title}</div>
-                <img src={book.thumbnail} className="book-card-thumbnail" />
-            </div>
+            <Link to={`/book/${book.id}`}>
+                <div>
+                    <div className="book-card-title">{book.title}</div>
+                    <img src={book.thumbnail} className="book-card-thumbnail" />
+                </div>
+            </Link>
 
             <div className="book-card-details">
                 <div className="book-card-detail">
@@ -15,8 +19,8 @@ export function BookPreview({ book, setSelectedBook }) {
                 <div className="book-card-detail">
                     <span className="book-card-details-title">Price:</span>
                     <span className="book-card-details-info">{book.listPrice.amount.toLocaleString(
-                            undefined, { style: 'currency', currency: book.listPrice.currencyCode }
-                        )}</span>
+                        undefined, { style: 'currency', currency: book.listPrice.currencyCode }
+                    )}</span>
                 </div>
             </div>
         </article>

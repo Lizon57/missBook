@@ -2,7 +2,8 @@ import { utilService } from './util-service.js'
 import { storageService } from './storage-service.js'
 
 export const bookService = {
-    query
+    query,
+    getBookById
 }
 
 const KEY = 'Books'
@@ -448,17 +449,26 @@ let gBooks = [
         }
     }
 ]
+
 _createBooksLst()
 
 function query(filterBy) {
     if (filterBy) {
-        let { title } = filterBy
+        let { title, language } = filterBy
         const filteredBooks = gBooks.filter(book => {
             return book.title.includes(title)
+                && book.language.includes(language)
         })
         return Promise.resolve(filteredBooks)
     }
     return Promise.resolve(gBooks)
+}
+
+function getBookById(bookId) {
+    let book = gBooks.find(function (book) {
+        return bookId === book.id
+    })
+    return Promise.resolve(book)
 }
 
 function _createBook() {
